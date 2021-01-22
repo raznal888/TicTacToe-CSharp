@@ -7,21 +7,27 @@ A programban a felhasználó játszhat egy másik felhasználó, illetve a gép 
 Használat:
 
 Parancsok:
+  
+"exit" - kilépés   
 
-"exit" - kilépés
-"start {első játékos} {második játékos}" - játszma indítása
-Pl. "Input command: exit"
+"start {első játékos} {második játékos}" - játszma indítása    
+Játékostípusok:  
+"user" - felhasználó  
+"easy" - gép könnyű fokozaton  
+"medium" - gép közepes fokozaton  
+"hard" - gép nehéz fokozaton  
+Pl. "Input command: start easy easy"  
 
-Játékostípusok:
-"user" - felhasználó
-"easy" - gép könnyű fokozaton
-"medium" - gép közepes fokozaton
-"hard" - gép nehéz fokozaton
-
-A felhasználó koordináták megadásával léphet a 3x3-as pályán.
-Pl. "Enter the coordinates: 1 1"
-
-A pálya egyes pontjaira vonatkozó koordináták az alábbiak szerint alakulnak:
-1 1   1 2   1 3
-2 1   2 2   2 3
-3 1   3 2   3 3
+A felhasználó koordináták megadásával léphet a 3x3-as pályán.  
+Pl. "Enter the coordinates: 1 1"  
+ 
+A pálya egyes pontjaira vonatkozó koordináták az alábbiak szerint alakulnak:  
+(1 1)
+(1 2)
+(1 3)      
+(2 1)
+(2 2)
+(2 3)      
+(3 1)
+(3 2)
+(3 3)     
