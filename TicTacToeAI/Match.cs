@@ -11,7 +11,8 @@ namespace TicTacToe
         internal Player CurrentPlayer { get; private set; }
         internal int[][] PlayerMoves { get; }
         internal int TurnCounter { get; private set;}
-        internal Match(Player firstPlayer, Player secondPlayer) {
+        internal Match(Player firstPlayer, Player secondPlayer) 
+        {
             Field = new char[FieldHeight][];
 
             for (int i = 0; i < FieldHeight; i++)
@@ -41,11 +42,13 @@ namespace TicTacToe
             CurrentPlayer = CurrentPlayer == Players[0] ? Players[1] : Players[0];
         }
 
-        internal bool IsCellOccupied(int selectedRow, int selectedColumn) {
+        internal bool IsCellOccupied(int selectedRow, int selectedColumn) 
+        {
             return Field[selectedRow - 1][selectedColumn - 1] != Mark.EMPTY.Char;
         }
 
-        internal void Play() {
+        internal void Play() 
+        {
 
             PrintField();
 
@@ -81,7 +84,8 @@ namespace TicTacToe
 
         }
 
-        private void PrintField() {
+        private void PrintField() 
+        {
             
             Console.WriteLine("---------");
             for (int row = 0; row < FieldHeight; row++) 
@@ -98,40 +102,48 @@ namespace TicTacToe
             Console.WriteLine("---------");
         }
 
-        private void PrintResult(bool gameNotFinished) {
+        private void PrintResult(bool gameNotFinished) 
+        {
             if (gameNotFinished) 
             {
                 Console.WriteLine(CurrentPlayer.Mark.Char + " wins");
             } 
-            else {
+            else 
+            {
                 Console.WriteLine("Draw");
             }
         }
 
-        internal char IsWon(int lastMoveRow, int lastMoveColumn) {
+        internal char IsWon(int lastMoveRow, int lastMoveColumn) 
+        {
 
             bool wins = CheckRow(lastMoveRow) || CheckColumn(lastMoveColumn)
                         || CheckMainDiagonal() || CheckSideDiagonal();
-            if (wins) {
+            if (wins) 
+            {
                 return Field[lastMoveRow][lastMoveColumn];
             }
 
             return Mark.EMPTY.Char;
         }
 
-        private bool CheckRow(int lastMoveRow) {
+        private bool CheckRow(int lastMoveRow) 
+        {
             return Field[lastMoveRow][2] == Field[lastMoveRow][1] && Field[lastMoveRow][1] == Field[lastMoveRow][0];
         }
 
-        private bool CheckColumn(int lastMoveColumn) {
+        private bool CheckColumn(int lastMoveColumn) 
+        {
             return Field[2][lastMoveColumn] == Field[1][lastMoveColumn] && Field[1][lastMoveColumn] == Field[0][lastMoveColumn];
         }
 
-        private bool CheckMainDiagonal() {
+        private bool CheckMainDiagonal() 
+        {
             return Field[0][0] == Field[1][1] && Field[1][1] == Field[2][2] && Field[0][0] != Mark.EMPTY.Char;
         }
 
-        private bool CheckSideDiagonal() {
+        private bool CheckSideDiagonal() 
+        {
             return Field[0][2] == Field[1][1] && Field[1][1] == Field[2][0] && Field[0][2] != Mark.EMPTY.Char;
         }
         

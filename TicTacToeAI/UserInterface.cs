@@ -17,7 +17,8 @@ namespace TicTacToe
             {
                 string command = EnterCommand();
 
-                if (command.Equals("exit")) {
+                if (command.Equals("exit")) 
+                {
                     gameRunning = false;
                     return;
                 }

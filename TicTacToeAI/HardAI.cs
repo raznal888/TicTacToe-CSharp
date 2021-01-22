@@ -20,8 +20,10 @@ namespace TicTacToe
             int bestScore = -1000;
             int[] step = new int[2];
 
-            for (int i = 0; i < match.FieldHeight; i++) {
-                for (int j = 0; j < match.FieldLength; j++) {
+            for (int i = 0; i < match.FieldHeight; i++) 
+            {
+                for (int j = 0; j < match.FieldLength; j++) 
+                {
                     if (match.Field[i][j] == Mark.EMPTY.Char)
                     {
 
@@ -33,7 +35,8 @@ namespace TicTacToe
 
                         match.Field[i][j] = Mark.EMPTY.Char;
 
-                        if (score > bestScore) {
+                        if (score > bestScore) 
+                        {
                             bestScore = score;
                             step[0] = i;
                             step[1] = j;
@@ -47,7 +50,8 @@ namespace TicTacToe
             return step;
         }
 
-        private int Minimax(Match match, int depth, bool isMaximizing) {
+        private int Minimax(Match match, int depth, bool isMaximizing) 
+        {
 
             if (match.IsWon(Move[0], Move[1]) == Mark.Char) 
             {
@@ -65,9 +69,12 @@ namespace TicTacToe
             int score;
             int bestScore = isMaximizing ? -1000 : 1000;
 
-            for (int i = 0; i < match.FieldHeight; i++) {
-                for (int j = 0; j < match.FieldLength; j++) {
-                    if (match.Field[i][j] == Mark.EMPTY.Char) {
+            for (int i = 0; i < match.FieldHeight; i++) 
+            {
+                for (int j = 0; j < match.FieldLength; j++) 
+                {
+                    if (match.Field[i][j] == Mark.EMPTY.Char) 
+                    {
                         Move[0] = i;
                         Move[1] = j;
 
@@ -77,7 +84,8 @@ namespace TicTacToe
 
                         match.Field[i][j] = Mark.EMPTY.Char;
 
-                        if (isMaximizing && score > bestScore || !isMaximizing && score < bestScore) {
+                        if (isMaximizing && score > bestScore || !isMaximizing && score < bestScore) 
+                        {
                             bestScore = score;
                         }
                     }
